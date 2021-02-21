@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+
+}
+
+html {
+    font-size: 62.5%; //10px
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+
+    @media only screen and (min-width:95.9375em) {
+        width: 73vw;
+    }
+
+    @media only screen and (max-width:95.9375em) {
+        max-width: 111rem;
+    }
+
+}

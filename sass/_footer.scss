@@ -1,0 +1,104 @@
+.footer {
+    background-color: $black;
+    display: block;
+
+    padding: 0 2rem;
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "logo social""links copyright";
+        grid-gap: 2rem;
+        padding: 3.5rem 0;
+
+        @media only screen and (max-width:654px) {
+            grid-template-areas: "logo""links""social""copyright";
+            grid-template-columns: 1fr;
+
+            &>* {
+                justify-self: center;
+            }
+
+        }
+
+    }
+
+    &__logo {
+        grid-area: logo;
+        align-self: start;
+
+        img {
+            height: 2rem;
+        }
+
+    }
+
+    &__links {
+        grid-area: links;
+        align-self: start;
+
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+
+        @media only screen and (min-width:655px) {
+            li:not(:last-child) {
+                margin-right: 3rem;
+            }
+        }
+
+        a {
+            font-size: 14px;
+            font-family: $alata;
+            text-decoration: none;
+            color: rgba($white, .8);
+            padding: 5px 0;
+            position: relative;
+        }
+
+        @media only screen and (max-width:654px) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            li:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    &__social {
+        grid-area: social;
+        justify-self: end;
+        color: $white;
+
+        .icon {
+            height: 2.7rem;
+            width: 2.7rem;
+            fill: $white;
+        }
+
+        @media only screen and (max-width:654px) {
+            .icon {
+                height: 2.4rem;
+                width: 2.4rem;
+            }
+        }
+
+        &>* {
+            &:not(:last-child) {
+                margin-right: 1.2rem;
+            }
+        }
+    }
+
+
+    &__copyright {
+        grid-area: copyright;
+        justify-self: end;
+        font-size: 14px;
+        font-family: $josefin-sans;
+        color: rgba($white, 0.7);
+    }
+
+}
